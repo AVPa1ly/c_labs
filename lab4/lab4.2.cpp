@@ -33,7 +33,8 @@ void input()
 		fgetws(str, 1025, fp);
 		for (int i = 0; str[i] != '\n' && str[i] != '\0'; i++)
 		{
-			if (isdigit(str[i]) && isdigit(str[i + 1]) && str[i + 2] == 46 && isdigit(str[i + 3]) && isdigit(str[i + 4]) && str[i + 5] == 46 && isdigit(str[i + 6]) && isdigit(str[i + 7]) && isdigit(str[i + 8]) && isdigit(str[i + 9]))
+			if (isdigit(str[i]) && isdigit(str[i + 1]) && str[i + 2] == 46 && isdigit(str[i + 3]) && isdigit(str[i + 4]) &&
+			    str[i + 5] == 46 && isdigit(str[i + 6]) && isdigit(str[i + 7]) && isdigit(str[i + 8]) && isdigit(str[i + 9]))
 			{
 				int current_day = (str[i] - 48) * 10 + (str[i + 1] - 48);
 				int current_month = (str[i + 3] - 48) * 10 + (str[i + 4] - 48);
@@ -41,7 +42,11 @@ void input()
 				bool is_leap = false;
 				if ((current_year % 400 == 0) || (current_year % 4 == 0 && current_year % 100 != 0))
 					is_leap = true;
-				if ((current_month >= 1 && current_month <= 12) && current_day >= 0 && ((current_day <= 28 && !is_leap) || (current_day <= 31 && current_month == 1) || (current_day <= 31 && current_month == 3) || (current_day <= 30 && current_month == 4) || (current_day <= 31 && current_month == 5) || (current_day <= 30 && current_month == 6) || (current_day <= 31 && current_month == 7) || (current_day <= 31 && current_month == 8) || (current_day <= 30 && current_month == 9) || (current_day <= 31 && current_month == 10) || (current_day <= 30 && current_month == 11) || (current_day <= 31 && current_month == 12) || (current_day <= 29 && is_leap)))
+				if ((current_month >= 1 && current_month <= 12) && current_day >= 0 && ((current_day <= 28 && !is_leap) || (current_day <= 31 &&
+					current_month == 1) || (current_day <= 31 && current_month == 3) || (current_day <= 30 && current_month == 4) || 
+					(current_day <= 31 && current_month == 5) || (current_day <= 30 && current_month == 6) || (current_day <= 31 && current_month == 7) || 
+					(current_day <= 31 && current_month == 8) || (current_day <= 30 && current_month == 9) || (current_day <= 31 && current_month == 10) || 
+					(current_day <= 30 && current_month == 11) || (current_day <= 31 && current_month == 12) || (current_day <= 29 && is_leap)))
 				{
 					if (!date_read)
 					{
@@ -52,13 +57,15 @@ void input()
 					}
 					else
 					{
-						if (current_year > maxyear || (current_year == maxyear && current_month > maxmonth) || (current_year == maxyear && current_month == maxmonth && current_day > maxday))
+						if (current_year > maxyear || (current_year == maxyear && current_month > maxmonth) ||
+						    (current_year == maxyear && current_month == maxmonth && current_day > maxday))
 						{
 							maxyear = current_year;
 							maxmonth = current_month;
 							maxday = current_day;
 						}
-						else if (current_year < minyear || (current_year == minyear && current_month < minmonth) || (current_year == minyear && current_month == minmonth && current_day < minday))
+						else if (current_year < minyear || (current_year == minyear && current_month < minmonth) ||
+							(current_year == minyear && current_month == minmonth && current_day < minday))
 						{
 							minyear = current_year;
 							minmonth = current_month;
