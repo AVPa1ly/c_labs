@@ -1,0 +1,7 @@
+﻿  HotelTracer.c
+D:\Progs\HotelTracer\HotelTracer\HotelTracer.c(109,15): warning C4244: функция: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\Progs\HotelTracer\HotelTracer\HotelTracer.c(129,6): warning C4013: gets: нет определения; предполагается "extern" с возвратом типа "int"
+  user_interface.c
+D:\Progs\HotelTracer\HotelTracer\user_interface.c(33,6): warning C4013: gets: нет определения; предполагается "extern" с возвратом типа "int"
+  Создание кода...
+  HotelTracer.vcxproj -> D:\Progs\HotelTracer\Debug\HotelTracer.exe
